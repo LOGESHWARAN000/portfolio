@@ -15,6 +15,13 @@ const PROJECTS = [
       "A responsive portfolio site designed and deployed to showcase skills and projects.",
     link: "https://github.com/LOGESHWARAN000/portfolio",
   },
+  {
+    title: "GitHub Profile Viewer",
+    stack: "React, Tailwind CSS, GitHub REST API",
+    description:
+      "A web app to search any GitHub username and view their profile stats and latest repositories.",
+    link: "https://github.com/LOGESHWARAN000/github-profile-viewer",
+  },
 ];
 
 export default function Projects() {
@@ -26,7 +33,7 @@ export default function Projects() {
         </span>
         <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl">Projects</h2>
       </div>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((project) => (
           <a
             key={project.title}
