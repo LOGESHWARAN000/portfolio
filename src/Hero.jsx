@@ -54,12 +54,11 @@ export default function Hero() {
             className="relative flex aspect-[4/5] w-full max-w-md items-center justify-center overflow-hidden bg-orange-500 shadow-2xl"
             style={{ borderRadius: "80px" }}
           >
-            <span className="font-serif text-9xl font-bold text-white/90"> <img 
-    src="./img/loki1.png" 
-    alt="loading" 
-    className="w-113 h-140 object-cover" 
-  />
-  </span>
+            <img
+              src="./img/loki1.png"
+              alt="Logeshwaran K"
+              className="h-full w-full object-cover"
+            />
           </div>
         </section>
       </div>
