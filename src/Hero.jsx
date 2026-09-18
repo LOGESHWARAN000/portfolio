@@ -1,6 +1,6 @@
 import "./App.css";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 /**
  * Hero Section
  * Combines the "Hello!" badge, name/title/objective text, and the
@@ -24,10 +24,22 @@ function HelloBadge() {
 }
 
 export default function Hero() {
+  // Fade the hero in on page load (not scroll-triggered, since it's
+  // already visible above the fold when the page opens).
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 50);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <main id="top" className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24 lg:px-24">
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-        <section className="flex flex-col items-start">
+        <section
+          className={`flex flex-col items-start transform transition-all duration-700 ease-out ${
+            loaded ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+          }`}
+        >
           <HelloBadge />
           <h2 className="mb-2 text-3xl font-semibold md:text-4xl">I am</h2>
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight md:text-7xl">
@@ -59,7 +71,11 @@ export default function Hero() {
           </div>
         </section>
 
-        <section className="relative flex justify-center md:justify-end">
+        <section
+          className={`relative flex justify-center transform transition-all delay-150 duration-700 ease-out md:justify-end ${
+            loaded ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+          }`}
+        >
           <div
             className="relative flex aspect-[4/5] w-full max-w-md items-center justify-center overflow-hidden bg-orange-500 shadow-2xl"
             style={{ borderRadius: "80px" }}
