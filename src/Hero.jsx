@@ -41,12 +41,22 @@ export default function Hero() {
             cloud technologies to contribute to organizational growth while
             continuously learning.
           </p>
-          <a
-            href="#contact"
-            className="rounded-md bg-neutral-800 px-12 py-4 text-lg font-medium text-white shadow-md transition-all hover:bg-black"
-          >
-            Contact
-          </a>
+
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              className="rounded-md bg-neutral-800 px-12 py-4 text-lg font-medium text-white shadow-md transition-all hover:bg-black"
+            >
+              Contact
+            </a>
+            <a
+              href={`${import.meta.env.BASE_URL}Logeshwaran_K_Resume.pdf`}
+              download
+              className="rounded-md border-2 border-neutral-800 px-12 py-4 text-lg font-medium text-neutral-800 shadow-md transition-all hover:bg-neutral-800 hover:text-white"
+            >
+              Download Resume
+            </a>
+          </div>
         </section>
 
         <section className="relative flex justify-center md:justify-end">
